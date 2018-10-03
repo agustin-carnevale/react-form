@@ -4,10 +4,14 @@ import axios from 'axios';
 
 export const submitRegistrationForm  = (formData) => async dispatch => {
     const res = await axios.post('http://www.mocky.io/v2/5bb111412e00008300927103',formData);
-    dispatch({
-        type:SUBMITTED_FORM,
-        payload:res.data
-    })
+    console.log('RESPONSE: ', res);
+    if(res.status==200)    
+        dispatch({  
+            type:SUBMITTED_FORM,
+            payload:res.data
+        });
+    else
+        console.log("Se produjo un error al enviar el formulario.");
 };
 
 export const resetRegistrationForm  = () => dispatch => {
