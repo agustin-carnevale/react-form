@@ -1,2 +1,3 @@
 export const SUBMITTED_FORM= 'SUBMITTED_FORM';
-export const  RESET_FORM = 'RESET_FORM';
+export const RESET_FORM = 'RESET_FORM';
+export const FETCH_LOCALIDADES = 'FETCH_LOCALIDADES';

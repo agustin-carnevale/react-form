@@ -7,7 +7,7 @@ import {validateSecondPage} from '../validate';
 
 
 class RegistrationFormSecondPage extends Component {
-  
+
   renderFields(){
     return ( 
       <div>

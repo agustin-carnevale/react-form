@@ -12,8 +12,9 @@ class App extends Component {
     const formData = this.props.form.values;
     const cuil=formData.cuil;
     formData.cuil= cuil.replace(/[-]+/g,'');
+    console.log('DATOS ENVIADOS: ',formData);
     
-    this.props.submitRegistrationForm(formData);
+    this.props.submitRegistrationForm(formData);    
   }
 
   reset = ()=>{

@@ -1,10 +1,12 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
+import * as actions from '../../../actions';
 
 class ProvinciaField extends Component {
 
     state={
-        provincias:null
+        provincias:null,
+        selectedID:""
     }
 
     componentDidMount(){
@@ -18,6 +20,7 @@ class ProvinciaField extends Component {
     }
 
     renderProvincias=()=>{
+        console.log('Render: Provincias')
         return(this.state.provincias &&  
             this.state.provincias.map( provincia =>
                 <option key={provincia.id} value={provincia.id}>
@@ -25,13 +28,18 @@ class ProvinciaField extends Component {
                 </option>
         ));
     }
+
+    handleChange=(event)=>{
+        this.setState({selectedID: event.target.value});
+        this.props.fetchLocalidades(event.target.value);
+    }
    
     render(){
         const {input, type, name, label, meta:{error, touched}} = this.props;
         return (
             <div>
                 <label className="label-form">{label}</label>
-                <select {...input} type={type} name={name} className="input-form" required>
+                <select {...input} type={type} value={this.state.selectedID} onChange={this.handleChange} name={name} className="input-form" required>
                     {this.renderProvincias()}
                 </select>
                 <div className="mensaje-error">
@@ -42,8 +50,5 @@ class ProvinciaField extends Component {
     }
 };
 
-function mstp(state){
-    return({provinciaID: state.form.registrationForm.values.provincia});
-}
+export default connect(null,actions)(ProvinciaField);
 
-export default connect(mstp)(ProvinciaField)
