@@ -20,7 +20,6 @@ class ProvinciaField extends Component {
     }
 
     renderProvincias=()=>{
-        console.log('Render: Provincias')
         return(this.state.provincias &&  
             this.state.provincias.map( provincia =>
                 <option key={provincia.id} value={provincia.id}>

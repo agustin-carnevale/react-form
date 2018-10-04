@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 class LocalidadField extends Component {
 
     renderLocalidades=()=>{
-        console.log('Render: Localidades');
         return (this.props.localidades &&  
             this.props.localidades.map( localidad =>
                 <option key={localidad.id} value={localidad.name}>{localidad.name}</option>
