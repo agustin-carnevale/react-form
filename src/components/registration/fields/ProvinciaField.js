@@ -36,7 +36,7 @@ class ProvinciaField extends Component {
     render(){
         const {input, type, name, label, meta:{error, touched}} = this.props;
         return (
-            <div>
+            <div className="form-field half">
                 <label className="label-form">{label}</label>
                 <select {...input} type={type} value={this.state.selectedID} onChange={this.handleChange} name={name} className="input-form" required>
                     {this.renderProvincias()}

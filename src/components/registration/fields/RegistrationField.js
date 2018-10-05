@@ -1,10 +1,11 @@
 import React from 'react';
 
-export default ({input, type ,label, meta:{error, touched}}) => {
+export default ({input,size, type ,label, meta:{error, touched}}) => {
+    var classes="form-field "+size;
 
     return (
-        <div>
-            <label className="label-form">{label}</label><br/>
+        <div className={classes}>
+            <label className="label-form">{label}</label>
             <input {...input} type={type} className="input-form" required/>
             <div className="mensaje-error">
                 {touched && error}

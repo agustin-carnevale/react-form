@@ -13,7 +13,7 @@ class LocalidadField extends Component {
     render(){
         const {input, type, name, label, meta:{error, touched}} = this.props;
         return (
-            <div>
+            <div className="form-field half">
                 <label className="label-form">{label}</label>
                 <select {...input} type={type} name={name} className="input-form" required >
                     {this.renderLocalidades()}

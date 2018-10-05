@@ -14,35 +14,45 @@ class RegistrationFormThirdPage extends Component {
   }
 
   renderFields(){
-    return ( 
-      <div>
-        <Field name="email" type="email"
-          component={RegistrationField}
-          label="Email"
-        />
-        <Field name="password" type={(this.state.visiblePassword)? "text":"password"}
-          component={RegistrationField}
-          label="Password"
-        />
-        <input type="checkbox" onChange={this.showPassword} />
-        <label>Mostrar contraseña</label>
-      </div>
+    return (
+        <React.Fragment>
+        <div className="form-line">
+
+          <Field name="email" type="email"
+            component={RegistrationField}
+            label="Email" size="full"/>
+
+        </div>
+        <div className="form-line">
+
+          <Field name="password" type={(this.state.visiblePassword)? "text":"password"}
+            component={RegistrationField}
+            label="Password" size="full"/>
+
+        </div>
+
+        <div className="form-line">
+          <label className="container-check">Mostrar contraseña
+            <input type="checkbox" onChange={this.showPassword} />
+            <span className="checkmark"></span>
+          </label>
+        </div>
+        </React.Fragment> 
+      
     );
   }
 
   render() {
     const {onSubmit, invalid, pristine, submitting} = this.props;
     return (
-      <form onSubmit={onSubmit}>
-      {this.renderFields()}
-      <div className="btn-container">
+      <form className="form-page" onSubmit={onSubmit}>
+        {this.renderFields()}
         <button type="button" className="previous boton-form" onClick={this.props.previousPage}>
           Atras
         </button>
         <button type="submit" className="next boton-form" disabled={invalid || submitting || pristine}>
           Finalizar
         </button>
-      </div>
       </form>
     );
   }
