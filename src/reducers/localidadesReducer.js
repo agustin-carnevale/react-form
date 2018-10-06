@@ -6,6 +6,7 @@ export default (state = [], action) => {
             return action.payload;
         case RESET_FORM:
             return null;
+        default:
+            return state;
     }
-    return state;
 }

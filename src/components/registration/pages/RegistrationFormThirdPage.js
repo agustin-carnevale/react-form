@@ -19,15 +19,15 @@ class RegistrationFormThirdPage extends Component {
         <div className="form-line">
 
           <Field name="email" type="email"
-            component={RegistrationField}
-            label="Email" size="full"/>
+            component={RegistrationField} label="Email" size="full"
+            placeholder="Ingresá tu dirección de correo"/>
 
         </div>
         <div className="form-line">
 
           <Field name="password" type={(this.state.visiblePassword)? "text":"password"}
-            component={RegistrationField}
-            label="Password" size="full"/>
+            component={RegistrationField} label="Password" size="full"
+            placeholder="Debe ser alfanumérica de al menos 8 caracteres"/>
 
         </div>
 

@@ -6,6 +6,7 @@ export default (state = false, action) => {
             return true;
         case RESET_FORM:
             return false;
+        default:
+            return state;
     }
-    return state;
 }

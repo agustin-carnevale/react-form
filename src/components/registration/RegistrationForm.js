@@ -30,7 +30,18 @@ class RegistrationForm extends Component {
           return (<RegistrationFormThirdPage
                   previousPage={this.previousPage}
                   onSubmit={this.props.onSubmit} />);
+      default: return;
     }
+  }
+
+  renderProgressBar(){
+    return(
+      <div className="progressbar">
+        <p className={this.state.page===1? "active":""}>1</p>
+        <p className={this.state.page===2? "active":""}>2</p>
+        <p className={this.state.page===3? "active":""}>3</p>
+      </div>
+    );
   }
 
   render() {
@@ -38,7 +49,9 @@ class RegistrationForm extends Component {
       <div className="form-container">
         <div className="form-header">
           <h2 className="form-title">Registro</h2>
-          <div className="page-indicator"></div>
+          <div className="page-indicator">
+          {this.renderProgressBar()}
+          </div>
         </div>
         {this.renderPage()}
       </div>

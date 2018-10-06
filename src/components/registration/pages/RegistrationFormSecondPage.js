@@ -14,12 +14,12 @@ class RegistrationFormSecondPage extends Component {
         <div className="form-line">
 
           <Field name="calle" type="text"
-            component={RegistrationField}
-            label="Calle" size="big"/>
+            component={RegistrationField} label="Calle" size="big"
+            placeholder="Ej.:Av. de Mayo"/>
 
           <Field name="numero" type="text"
-            component={RegistrationField}
-            label="Número" size="small"/>
+            component={RegistrationField} label="Número" size="small"
+            placeholder="Ej.:3651"/>
 
         </div>
         <div className="form-line">

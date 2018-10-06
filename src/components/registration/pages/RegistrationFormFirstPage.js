@@ -12,8 +12,8 @@ class RegistrationFormFirstPage extends Component {
         <div className="form-line">
 
           <Field name="nombre" type="text"
-            component={RegistrationField}
-            label="Nombre Completo" size="full"/>
+            component={RegistrationField} label="Nombre Completo" size="full"
+            placeholder="Ej.:Juan Carlos Sanchez"/>
 
         </div>
         <div className="form-line">
